@@ -1,0 +1,128 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0e0202;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 500px;
+    min-height: 300px;
+    background-color: rgb(128, 48, 48);
+    margin-top: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: 20px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.input-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.input-submit input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(201, 200, 207);
+    color: rgb(13, 148, 24);
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+  
+}
+
+.input-submit button {
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+    background-color: rgb(123, 116, 161);
+    cursor: pointer;
+}
+
+.input-submit button i {
+    color: rgb(255, 255, 255);
+}
+
+#task-items {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+    width: 90%;
+    gap: 10px;
+    padding: 10px;
+}
+#task-items .item{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background-color: rgb(137, 225, 65);
+    padding: 10px;
+    border-radius: 10px;
+}
+#task-items .item .item-name {
+    color: rgb(16, 17, 16);
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+
+}
+#task-items .item .item-name h3 {
+width: 200px;
+white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#task-items .item .item-symbols {
+    display: flex;
+  gap: 10px;
+
+}
+#task-items .item .item-symbols .delete {
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    font-size: 1.2rem;
+}
+#task-items .item .item-symbols .edit {
+    cursor: pointer;
+    color: rgb(41, 52, 155);
+    font-size: 1.2rem;
+}
+#task-items .item .item-symbols .checked {
+    cursor: pointer;
+    color: rgb(28, 175, 36);
+    font-size: 1.2rem;
+}
+#task-items .item .item-symbols .checked {
+    cursor: pointer;
+    color: rgb(54, 54, 54);
+    font-size: 1.2rem;
+}
+.container .clear-items{
+border: none;
+padding: 10px;
+border-radius: 5px;
+background-color: rgb(14, 12, 12);
+color: white;
+cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+    #task-items .item .item-name h3 {
+        width: 100px;
+    }
+    
+}
