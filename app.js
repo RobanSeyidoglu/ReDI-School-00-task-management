@@ -45,7 +45,7 @@ function displaytasks() {
         <h3>${task.name}</h3>
       </div>
       <div class='timer'>
-      <input type="datetime-local" id="datetime-picker-${index}" value="${task.endTime ? new Date(task.endTime).toISOString().slice(0,16) : ''}" ${task.endTime ? 'disabled' : ''}>
+      <input type="datetime-local" id="datetime-picker-${index}" value="${task.endTime ? new Date(task.endTime).toISOString().slice(0, 16) : ''}" ${task.endTime ? 'disabled' : ''}>
       <button id='activate-timer-${index}' onClick='countDown(${index})' ${task.endTime || task.checked ? 'disabled' : ''}>Activate The Timer</button>
       <div id='counter-result-${index}'>${timeRemaining}</div>
       </div>
@@ -106,7 +106,7 @@ function edittasks(index) {
 // Check/Uncheck item & save changes
 function checktasks(index) {
   tasks[index].checked = !tasks[index].checked;
-  
+
   if (tasks[index].checked) {
     clearInterval(intervals[index]);
     delete intervals[index];
@@ -144,6 +144,12 @@ function countDown(index, restart = false) {
       clearInterval(intervals[index]);
       delete intervals[index];
       counterResult.innerHTML = "⏳ Time is up!";
+      if (timeRemaining <= 0) {
+        counterResult.innerHTML = "⏳ Time is up!";
+      }
+      else if (tasks[index].checked) {
+        counterResult.innerHTML = 'Done ✅'
+      }
       return;
     }
 
